@@ -1,0 +1,25 @@
+{
+    "name": "ilex-lang",
+    "displayName": "Ilex-lang",
+    "description": "Syntax highlighting for Ilex.",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.66.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "ilex",
+            "aliases": ["Ilex", "ilex"],
+            "extensions": [".ilex"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "ilex",
+            "scopeName": "source.ilex",
+            "path": "./syntaxes/ilex.tmLanguage.json"
+        }]
+    }
+}

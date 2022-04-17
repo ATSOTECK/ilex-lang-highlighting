@@ -1,0 +1,320 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "ilex",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#statements"
+		},
+		{
+			"include": "#callables"
+		},
+		{
+			"include": "#ident"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#digits"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.ilex",
+					"match": "\\b(if|else|elif|while|for|return|until|forever|goto|do|when|repeat)\\b"
+				},
+				{
+					"name": "constant.language.null.ilex",
+					"match": "\\b(null)\\b"
+				},
+				{
+					"name": "constant.language.boolean.ilex",
+					"match": "\\b(true|false)\\b"
+				},
+				{
+					"name": "support.function.builtin.ilex",
+					"match": "\\b(print)\\b"
+				},
+				{
+					"name": "variable.language.this.ilex",
+					"match": "\\b(this)\\b"
+				},
+				{
+					"name": "variable.language.super.ilex",
+					"match": "\\b(super)\\b"
+				},
+                {
+                    "match": "(<<|>>|~|\\^)",
+                    "name": "keyword.operator.bitwise.ilex"
+                },
+                {
+                    "match": "((&|\\^|\\||<<|>>)=)",
+                    "name": "keyword.operator.assignment.bitwise.ilex"
+                },
+                {
+                    "match": "(==|!=|<=|>=|<>|<|>)",
+                    "name": "keyword.operator.comparison.ilex"
+                },
+                {
+                    "match": "([+*/%-]=)",
+                    "name": "keyword.operator.assignment.arithmetic.ilex"
+                },
+                {
+                    "match": "(=|:)",
+                    "name": "keyword.operator.assignment.ilex"
+                },
+                {
+                    "match": "(\\-\\-|\\+\\+)",
+                    "name": "keyword.operator.increment-decrement.ilex"
+                },
+                {
+                    "match": "(\\.\\.|\\.\\.\\.)",
+                    "name": "keyword.operator.range.ilex"
+                },
+                {
+                    "match": "(\\-|\\+|\\*|\\/|%)",
+                    "name": "keyword.operator.arithmetic.ilex"
+                },
+                {
+                    "match": "(!|&&|\\|\\|)",
+                    "name": "keyword.operator.logical.ilex"
+                },
+                {
+                    "match": "(\\||&)",
+                    "name": "keyword.operator.bitwise.ilex"
+                },
+                {
+                    "match": "\\?|:",
+                    "name": "keyword.control.ternary.ilex"
+                },
+                {
+                    "match": "\\bpackage\\b",
+                    "name": "keyword.other.package.ilex"
+                },
+                {
+                    "match": "\\buse\\b",
+                    "name": "keyword.other.use.ilex"
+                }
+			]
+		},
+		"statements": {
+			"patterns": [
+				{
+					"match": "\\b(var|val|const)\\s+([A-Za-z_][A-Za-z0-9_]*)\\b",
+					"captures": {
+						"1": {
+							"name": "storage.type.ilex"
+						},
+						"2": {
+							"name": "support.variable.ilex"
+						}
+					}
+				},
+				{
+					"match": "\\b(fn)\\s+([A-Za-z_][A-Za-z0-9_]*)\\s*\\(([A-Za-z0-9,\\s]*)\\)",
+					"captures": {
+						"1": {
+							"name":"keyword.type.function.ilex"
+						},
+						"2": {
+							"name":"entity.name.function.ilex"
+						},
+						"3": {
+							"patterns": [
+								{
+									"match": "\\b[A-Za-z_][A-Za-z0-9_]*\\b",
+									"name": "variable.parameter.ilex"
+								}
+							]
+						}
+					}
+				},
+				{
+					"match": "\\b(class)\\s+([A-Za-z_][A-Za-z0-9_]*)(?:\\s*(<)\\s*([A-Za-z_][A-Za-z0-9_]*))?\\b",
+					"captures": {
+						"1": {
+							"name": "storage.type.class.ilex"
+						},
+						"2": {
+							"name": "entity.name.type.class.ilex"
+						},
+						"3": {
+							"name": "storage.modifier.ilex"
+						},
+						"4": {
+							"name": "entity.name.type.class.ilex"
+						}
+					}
+				}
+			]
+		},
+		"callables": {
+			"patterns": [
+				{
+					"match": "([A-Za-z_][A-Za-z0-9_]*)\\(",
+					"name": "support.function.ilex"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.ilex",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": []
+		},
+		"digits": {
+			"patterns": [
+				{
+					"name": "constant.numeric.ilex",
+					"match": "\\b[0-9]+(?:.[0-9]+)?\\b"
+				}
+			]
+		},
+		"ident": {
+			"patterns": [
+				{
+					"name": "variable.other.readwrite.ilex",
+					"match": "\\b[A-Za-z_][A-Za-z0-9_]*\\b"
+				}
+			]
+		},
+		"comments": {
+			"patterns": [
+				{
+					"captures": {
+						"1": {
+							"name": "punctuation.definition.comment.ilex"
+						}
+					},
+					"match": "\\A^(#!).*$\\n?",
+					"name": "comment.line.number-sign.ilex"
+				},
+				{
+					"begin": "/\\*\\*(?!/)|/-",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.begin.ilex"
+						}
+					},
+					"end": "\\*/|-/",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.end.ilex"
+						}
+					},
+					"name": "comment.block.documentation.ilex",
+					"patterns": [
+						{
+							"include": "#nested"
+						}
+					]
+				},
+				{
+					"begin": "/\\*:|/-",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.begin.ilex"
+						}
+					},
+					"end": "\\*/|-/",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.end.ilex"
+						}
+					},
+					"name": "comment.block.documentation.playground.ilex",
+					"patterns": [
+						{
+							"include": "#nested"
+						}
+					]
+				},
+				{
+					"begin": "/\\*|/-",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.begin.ilex"
+						}
+					},
+					"end": "\\*/|-/",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.end.ilex"
+						}
+					},
+					"name": "comment.block.ilex",
+					"patterns": [
+						{
+							"include": "#nested"
+						}
+					]
+				},
+				{
+					"match": "\\*/|-/",
+					"name": "invalid.illegal.unexpected-end-of-block-comment.ilex"
+				},
+				{
+					"begin": "(^[ \\t]+)?(?=//)",
+					"beginCaptures": {
+						"1": {
+							"name": "punctuation.whitespace.comment.leading.ilex"
+						}
+					},
+					"end": "(?!\\G)",
+					"patterns": [
+						{
+							"begin": "///",
+							"beginCaptures": {
+								"0": {
+									"name": "punctuation.definition.comment.ilex"
+								}
+							},
+							"end": "^",
+							"name": "comment.line.triple-slash.documentation.ilex"
+						},
+						{
+							"begin": "//:",
+							"beginCaptures": {
+								"0": {
+									"name": "punctuation.definition.comment.ilex"
+								}
+							},
+							"end": "^",
+							"name": "comment.line.double-slash.documentation.ilex"
+						},
+						{
+							"begin": "//",
+							"beginCaptures": {
+								"0": {
+									"name": "punctuation.definition.comment.ilex"
+								}
+							},
+							"end": "^",
+							"name": "comment.line.double-slash.ilex"
+						}
+					]
+				}
+			],
+			"repository": {
+				"nested": {
+					"begin": "/\\*|/-",
+					"end": "\\*/|-/",
+					"patterns": [
+						{
+							"include": "#nested"
+						}
+					]
+				}
+			}
+		}
+	},
+	"scopeName": "source.ilex"
+}
