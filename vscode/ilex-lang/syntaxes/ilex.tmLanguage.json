@@ -93,7 +93,7 @@
                 },
                 {
                     "match": "\\?|:",
-                    "name": "keyword.control.ternary.ilex"
+                    "name": "keyword.operator.ternary.ilex"
                 },
                 {
                     "match": "\\bpackage\\b",
