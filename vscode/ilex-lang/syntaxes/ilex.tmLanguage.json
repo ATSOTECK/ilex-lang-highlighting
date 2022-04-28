@@ -29,7 +29,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.ilex",
-					"match": "\\b(if|else|elif|while|for|return|until|forever|goto|do|when|repeat|assert)\\b"
+					"match": "\\b(if|else|elif|while|for|return|until|forever|goto|do|repeat|assert|switch|case|default|break|continue)\\b"
 				},
 				{
 					"name": "constant.language.null.ilex",
@@ -64,7 +64,7 @@
                     "name": "keyword.operator.assignment.arithmetic.ilex"
                 },
                 {
-                    "match": "(=|:)",
+                    "match": "(:=|=)",
                     "name": "keyword.operator.assignment.ilex"
                 },
                 {
@@ -86,10 +86,6 @@
                 {
                     "match": "(\\||&)",
                     "name": "keyword.operator.bitwise.ilex"
-                },
-                {
-                    "match": "\\?|:",
-                    "name": "keyword.operator.ternary.ilex"
                 },
                 {
                     "match": "\\bpackage\\b",
