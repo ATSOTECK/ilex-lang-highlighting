@@ -92,7 +92,7 @@
                     "name": "keyword.other.package.ilex"
                 },
                 {
-                    "match": "\\b(use|from)\\b",
+                    "match": "\\b(use|from|as)\\b",
                     "name": "keyword.other.use.ilex"
                 },
                 {
