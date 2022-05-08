@@ -64,7 +64,7 @@
                     "name": "keyword.operator.assignment.arithmetic.ilex"
                 },
                 {
-                    "match": "(:=|=)",
+                    "match": "(:=|::=|=)",
                     "name": "keyword.operator.assignment.ilex"
                 },
                 {
