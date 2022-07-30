@@ -88,6 +88,10 @@
                     "name": "keyword.operator.bitwise.ilex"
                 },
                 {
+                    "match": "(#)",
+                    "name": "keyword.operator.other.ilex"
+                },
+                {
                     "match": "\\bpackage\\b",
                     "name": "keyword.other.package.ilex"
                 },
