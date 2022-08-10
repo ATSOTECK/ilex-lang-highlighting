@@ -2,7 +2,9 @@
     "name": "ilex-lang",
     "displayName": "Ilex-lang",
     "description": "Syntax highlighting for Ilex.",
-    "version": "0.0.1",
+    "version": "0.0.3",
+    "repository": {"url": "https://github.com/ATSOTECK/ilex-lang-highlighting"},
+    "publisher": "ATSOTECK",
     "engines": {
         "vscode": "^1.66.0"
     },
