@@ -10,7 +10,7 @@ See https://atsoteck.github.io/ilex-lang/ for more info.
 
 Adds syntax highlighting for the Ilex scripting language to Visual Studio Code.
 
-![Rock Paper Scissors](./img/RPS.png)
+![Rock Paper Scissors](img/RPS.png)
 
 ## Known Issues
 
