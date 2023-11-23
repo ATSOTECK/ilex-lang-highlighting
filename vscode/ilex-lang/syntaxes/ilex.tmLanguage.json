@@ -105,7 +105,7 @@
 				},
                 {
                     "name": "storage.modifier.ilex",
-                    "match": "\\b(abstract|static|private|protected)\\b"
+                    "match": "\\b(abstract|static|private|public|protected)\\b"
                 },
                 {
                     "name": "keyword.other.behavior.ilex",
