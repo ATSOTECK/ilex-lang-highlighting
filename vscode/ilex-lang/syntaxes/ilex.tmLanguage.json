@@ -29,7 +29,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.ilex",
-					"match": "\\b(if|else|elif|while|for|return|until|forever|goto|do|repeat|assert|typeof|switch|case|default|break|continue|enum|with)\\b"
+					"match": "\\b(if|else|elif|while|for|return|until|forever|goto|do|repeat|assert|typeof|switch|case|default|break|continue|enum|withFile)\\b"
 				},
 				{
 					"name": "constant.language.null.ilex",
